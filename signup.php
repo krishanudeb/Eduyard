@@ -25,7 +25,7 @@ session_start();  //session started
 </head>
 
 <body>
-
+	<!--Php Code for Signup Page-->
 	<?php
 
 	include 'dbcon.php';  //database connection
@@ -49,11 +49,21 @@ session_start();  //session started
 
 		$phonecount= mysqli_num_rows($query);
 
+		$length = strlen($password); //if reqd in future
+
 		if($phonecount>0){
 			echo "Contact already exist";
 		}
 		else{ 
-			//password validation
+			if($length<=7) // Minimum Character for password validation
+			{   ?>
+			<script>
+				alert("Minimum 8 characters required");
+				</script>
+				<?php
+			}
+			else{
+				//password validation
 			if($password===$cpassword){
 
 				//insertion query
@@ -80,10 +90,13 @@ session_start();  //session started
 				echo "Password not matching";
 			}
 		}
+			}
+			
 	}
 
 	?>
-	
+					<!-- Php Code End-->
+
 	<div class="navbar navbar-fixed-top">
 	
 	<div class="navbar-inner">
@@ -103,18 +116,18 @@ session_start();  //session started
 			<div class="nav-collapse">
 				<ul class="nav pull-right">
 					<li class="">						
-						<a href="login.html" class="">
+						<a href="login.php" class="">
 							Already have an account? Login now
 						</a>
 						
 					</li>
-					<li class="">						
+					<!--<li class="">						
 						<a href="index.html" class="">
 							<i class="icon-chevron-left"></i>
 							Back to Homepage
 						</a>
 						
-					</li>
+					</li>-->
 				</ul>
 				
 			</div><!--/.nav-collapse -->	
@@ -134,7 +147,7 @@ session_start();  //session started
 	<!--using html entities function to avoid page reload errors i.e, avoid redirect to same page-->
 		<form action="<?php echo htmlentities($_SERVER['PHP_SELF']);?>" method="POST">  /
 		
-			<h1>Signup for Free Account</h1>			
+			<h1>Signup for</h1>			
 			
 			<div class="login-fields">
 				
@@ -188,7 +201,7 @@ session_start();  //session started
 
 <!-- Text Under Box -->
 <div class="login-extra">
-	Already have an account? <a href="login.html">Login to your account</a>
+	Already have an account? <a href="login.php">Login to your account</a>
 </div> <!-- /login-extra -->
 
 

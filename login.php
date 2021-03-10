@@ -1,9 +1,13 @@
+<?php
+session_start();  //session started
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   
 <head>
     <meta charset="utf-8">
-    <title>Login - Bootstrap Admin Template</title>
+    <title>Login </title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes"> 
@@ -20,6 +24,54 @@
 </head>
 
 <body>
+
+	<?php
+
+		include 'dbcon.php';  //Database connection
+
+		//Details fetch from user
+		if(isset($_POST['submit'])){
+			$username = $_POST['username'];
+			$password = $_POST['password'];
+
+			//validation query starts
+
+			//username validation
+			$user_search = "select * from admin where username='$username' ";
+			$query = mysqli_query($con,$user_search);
+
+			$username_count = mysqli_num_rows($query); //check if the username is found in the database table
+
+			if($username_count)   //if found
+			{
+				$user_pass = mysqli_fetch_assoc($query);  //fetching password of the same user using this function
+
+				$db_pass = $user_pass['password'];      // taking the same password in variable db_pass
+
+				$_SESSION['name']=$user_pass['name']; //saving the username for future reference
+
+				$pass_decode = password_verify ($password, $db_pass);  //decoding hashed password by checking if the entered password matches the hashed password db_pass
+
+				if($pass_decode)
+				{
+					echo "Login Successful";
+					?>
+					<script>
+						location.replace("index.php")
+						</script>
+					<?php
+				}
+				else
+				{
+				echo "Password Incorrect";
+				}
+			} 
+			else{
+				echo "Invalid Username";
+		    }
+		}
+
+     ?>
 	
 	<div class="navbar navbar-fixed-top">
 	
@@ -34,26 +86,26 @@
 			</a>
 			
 			<a class="brand" href="index.html">
-				Bootstrap Admin Template				
+				EDUYARD			
 			</a>		
 			
 			<div class="nav-collapse">
 				<ul class="nav pull-right">
 					
 					<li class="">						
-						<a href="signup.html" class="">
+						<a href="signup.php" class="">
 							Don't have an account?
 						</a>
 						
 					</li>
 					
-					<li class="">						
+					<!--<li class="">						
 						<a href="index.html" class="">
 							<i class="icon-chevron-left"></i>
 							Back to Homepage
 						</a>
 						
-					</li>
+					</li>-->
 				</ul>
 				
 			</div><!--/.nav-collapse -->	
@@ -70,7 +122,7 @@
 	
 	<div class="content clearfix">
 		
-		<form action="#" method="post">
+		<form action="<?php echo htmlentities($_SERVER['PHP_SELF']);?>" method="POST">  <!--htmlentities function is used to do query in same page-->
 		
 			<h1>Member Login</h1>		
 			
@@ -97,7 +149,7 @@
 					<label class="choice" for="Field">Keep me signed in</label>
 				</span>
 									
-				<button class="button btn btn-success btn-large">Sign In</button>
+				<button type="submit" name="submit" class="button btn btn-success btn-large">Log In</button>
 				
 			</div> <!-- .actions -->
 			
