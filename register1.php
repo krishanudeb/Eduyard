@@ -1,3 +1,28 @@
+<?php
+
+include 'dbcon.php';
+include 'functions.inc.php'; //contains imp functions
+
+if(isset($_POST['submit'])) { //on clicking register
+
+
+  $name=get_safe_value($con,$_POST['name']); //get safe value is stored in function.inc.php
+   $roll_no=get_safe_value($con,$_POST['rollno']);
+   $address=get_safe_value($con,$_POST['address']);
+   $phone=get_safe_value($con,$_POST['phone']);
+   $guardian=get_safe_value($con,$_POST['guardian']);
+   $class=get_safe_value($con,$_POST['class']);
+   //$date = date('Y-m-d h:i:s');
+
+      mysqli_query($con,"insert into student(name,roll_no,address,phone,guardian,class_id) values('$name','$roll_no','$address','$phone','$guardian','$class')");
+
+         }
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   
@@ -68,7 +93,7 @@
 	
 	<div class="content clearfix">
 		
-		<form action="#" method="post">
+		<form  method="post">
 		
 			<h1>Signup student </h1>			
 			
@@ -103,12 +128,32 @@
 				</div> <!-- /field -->
 				<div class="field">
 					<label for="class">Class:</label>
-					<select name="cars" id="cars">
-    <option value="volvo">Volvo</option>
-    <option value="saab">Saab</option>
-    <option value="opel">Opel</option>
-    <option value="audi">Audi</option>
-  </select>
+					<select name="class" id="class">
+    <option>select class
+                              </option>
+                              <?php
+
+                              $res = mysqli_query($con,"select * from class order by name asc");
+                             while($row=mysqli_fetch_assoc($res))
+
+                             {
+                              if($row['id']==$class_id)
+                              {
+                                 echo "<option  selected value =".$row['id'].">".$row['name']."</option>";
+
+                              }
+                              else
+                              {
+                                 echo "<option value =".$row['id'].">".$row['name']."</option>";
+
+                              }
+                             }
+                              
+                              
+                              ?>
+
+
+                               </select>
 				</div> <!-- /field -->
 
 				
@@ -123,7 +168,8 @@
 					<label class="choice" for="Field">Agree with the Terms & Conditions.</label>
 				</span>
 									
-				<button class="button btn btn-primary btn-large" onclick="user_register()">Register</button>
+				<button class="button btn btn-primary btn-large" name="submit" type="submit"
+				>Register</button>
 
 				
 			</div> <!-- .actions -->
