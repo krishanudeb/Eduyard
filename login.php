@@ -57,7 +57,7 @@ session_start();  //session started
 					echo "Login Successful";
 					?>
 					<script>
-						location.replace("index.php")
+						location.replace("index.php")   //redirects user to homepage
 						</script>
 					<?php
 				}

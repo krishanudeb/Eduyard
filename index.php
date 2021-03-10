@@ -1,13 +1,13 @@
 <?php
-session_start();
+session_start();   //session started
 
 if(!isset($_SESSION['name'])){
   ?>
   <script> 
-  alert("You are logged out");
+  alert("You are logged out");  //logout notification, if the user uses back button
   </script>
   <?php
-  header('location:login.php');
+  header('location:login.php');  //loaction will remain in login page if the user logs out
 }
 ?>
 
@@ -45,7 +45,7 @@ if(!isset($_SESSION['name'])){
             </ul>
           </li>
           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                            class="icon-user"></i> <?php echo $_SESSION['name'];?> <b class="caret"></b></a>
+                            class="icon-user"></i> <?php echo $_SESSION['name'];?> <b class="caret"></b></a>  <!--The Name of the user entered will be displayed using php session-->
             <ul class="dropdown-menu">
               <li><a href="javascript:;">Profile</a></li>
               <li><a href="logout.php">Logout</a></li>
