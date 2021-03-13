@@ -5,48 +5,7 @@ include 'functions.inc.php'; //contains imp functions
 
 $msg='';
 
-if(isset($_POST['submit'])) { //on clicking register
 
-
-  $term_id=get_safe_value($con,$_POST['term_id']); //get safe value is stored in function.inc.php
-   $subject_id=get_safe_value($con,$_POST['subject_id']);
-   $marks=get_safe_value($con,$_POST['marks']);
-   $student_id=get_safe_value($con,$_POST['student_id']);
-   
-   //$date = date('Y-m-d h:i:s');
-
-   if(is_null($term_id) ||!isset($subject_id)|| is_null($marks) || is_null($student_id))
-   {
-    ?>
-    <script type="text/javascript">
-      alert("wrong");
-    </script>
-
-    <?php
-   }
-
-   $res=mysqli_query($con,"select * from marks where term_id='$term_id' and sub_id='$subject_id' and student_id='$student_id'");
-
-   $check = mysqli_num_rows($res);
-
-   if($check>0)
-   {
-        $msg="   <p style='color:red;'>  *marks for this student already exists for this particular subject</p>";
-   }
-
-   else
-   {
-
-     mysqli_query($con,"insert into marks(term_id,sub_id,marks,student_id) values('$term_id','$subject_id','$marks','$student_id')");
-
-     $msg="<p style='color:green;'>  *marks successfully entered</p>";
-
-   }
-
-
-     
-
-         }
 
 
 ?>
@@ -411,47 +370,7 @@ if(isset($_POST['submit'])) { //on clicking register
       });
    }
 
-   function get_name(student_id)
-   {
-
-
-      var student_id=jQuery('#student_id').val();
-      jQuery.ajax({
-
-         url:'get_name.php',
-         type:'post',
-         data:'student_id='+student_id,
-         success:function(result) {
-            jQuery('#name').html(result);
-         }
-
-
-      });
-   }
-
-
-   function get_subject(student_id)
-   {
-         if( !$('#class_id').val() ) {
-
-      alert("enter class");
-
-
-    }
-
-      var class_id=jQuery('#class_id').val();
-      jQuery.ajax({
-
-         url:'get_subject.php',
-         type:'post',
-         data:'class_id='+class_id,
-         success:function(result) {
-            jQuery('#scolumns').html(result);
-         }
-
-
-      });
-   }
+   
 if ( window.history.replaceState ) {
   window.history.replaceState( null, null, window.location.href ); //save from resubmission when refresh happens
 }
