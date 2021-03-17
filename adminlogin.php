@@ -7,7 +7,7 @@ session_start();  //session started
   
 <head>
     <meta charset="utf-8">
-    <title>Login </title>
+    <title>Admin Login </title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes"> 

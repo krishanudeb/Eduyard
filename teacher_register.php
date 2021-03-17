@@ -3,7 +3,7 @@
   
  <head>
     <meta charset="utf-8">
-    <title>Signup - Bootstrap Admin Template</title>
+    <title>Teacher Sign up</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes"> 
@@ -34,7 +34,7 @@
 			</a>
 			
 			<a class="brand" href="index.html">
-				Bootstrap Admin Template				
+				EDUYARD Teacher Sign up				
 			</a>		
 			
 			<div class="nav-collapse">
@@ -70,11 +70,11 @@
 		
 		<form action="#" method="post">
 		
-			<h1>Signup for Free Account</h1>			
+			<h1>Signup </h1>			
 			
 			<div class="login-fields">
 				
-				<p>Create your free account:</p>
+				<p>Create Teacher Account</p>
 				
 				<div class="field">
 					<label for="firstname">First Name:</label>
