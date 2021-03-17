@@ -7,7 +7,7 @@ $class_id=get_safe_value($con,$_POST['class_id']);  //class_id is the id passed 
 $sql="select * from student where class_id='$class_id' ";   //query
 $res=mysqli_query($con,$sql);                           //connection query and table display
 
-$html="<table>                                              
+$html="<table >                                              
 <thead>
   <tr>
     <th>Roll No</th>

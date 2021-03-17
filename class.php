@@ -34,7 +34,7 @@ session_start();   //session started
 <?php
 
 include 'dbcon.php';
-//include 'getclass.php';
+
 
 ?>
 
@@ -175,7 +175,7 @@ include 'dbcon.php';
 										<fieldset>
 		                         
                     <!--Space inside the empty div where the result(table) of getclass.php will be displayed-->
-                    <div id="class_table">
+                    <div id="class_table" class="table table-striped table-bordered">
 
                         </div>
 
@@ -198,18 +198,7 @@ include 'dbcon.php';
 	     
 
     
-<div class="widget-content nopadding">
-            
-               
-          </div>
 
-          </div> <!-- /row -->
-          </div> <!-- /container -->
-	    
-      </div> <!-- /main-inner -->
-    
-          </div> <!-- /main -->
-        
     
 <script>
   function get_class(class_id)         //Taking class id from above and processing it via AJAX

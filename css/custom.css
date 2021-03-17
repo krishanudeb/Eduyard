@@ -4,7 +4,7 @@
 }
 
 .container2{
-  width: 720px;
+  
   display: flex;
   margin: 0 auto;
   padding-left: 32px;
@@ -32,7 +32,7 @@ td, th {
 }
 
 .container3 {
-  width: 720px;
+  
   display: flex;
   margin: 0 auto;
   padding-left: 32px;
@@ -74,3 +74,10 @@ td, th {
 .flex-container4 { 
   display: flex; 
 }
+.vertical { 
+	border-left: 6px solid rgb(109, 245, 177); 
+	height: 500px; 
+	position:absolute; 
+	top:15%;
+	left: 30%; 
+} 
