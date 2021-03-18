@@ -4,7 +4,7 @@
 }
 
 .container2{
-  width: 720px;
+  
   display: flex;
   margin: 0 auto;
   padding-left: 32px;
@@ -32,7 +32,7 @@ td, th {
 }
 
 .container3 {
-  width: 720px;
+  
   display: flex;
   margin: 0 auto;
   padding-left: 32px;
@@ -52,7 +52,7 @@ td, th {
 
 
 .container4 {
-  width: 720px;
+  
   
   display: flex;
   margin: 0 auto;
@@ -71,6 +71,3 @@ td, th {
   text-align: center;
 }
 
-.flex-container4 { 
-  display: flex; 
-}

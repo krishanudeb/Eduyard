@@ -17,7 +17,7 @@ $sql2="select  distinct(student.name) as sname, marks.marks, subject.name as sub
 if(mysqli_num_rows($res2)>0)
 {
     $html="
-         <h2>MARKS</h2>
+         
 
     <table>
         <thead>
