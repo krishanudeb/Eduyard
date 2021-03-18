@@ -136,7 +136,6 @@ include 'top.inc.php';// contasins top nav bar etc.
             </div>
             <!-- /widget-header -->
             <div class="widget-content">
-<<<<<<< HEAD
               <div class="shortcuts"> <a href="routine.php" class="shortcut"><i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Time table</span> </a>
               <a href="routine.php" class="shortcut"><i class="shortcut-icon icon-folder-close"></i><span class="shortcut-label">test</span> </a>
               <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-signal"></i> <span class="shortcut-label">Reports</span> </a>
@@ -146,17 +145,10 @@ include 'top.inc.php';// contasins top nav bar etc.
               <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-picture"></i> <span class="shortcut-label">Photos</span> </a>
               <a href="javascript:;" class="shortcut"> <i class="shortcut-icon icon-tag"></i><span class="shortcut-label">Tags</span> </a> 
               <a href="notice_admin.php" class="shortcut"> <i class="shortcut-icon icon-tasks"></i><span class="shortcut-label">Notice</span> </a> 
-              <a href="teacher_register.php" class="shortcut"> <i class="shortcut-icon icon-pencil"></i><span class="shortcut-label">Register Teacher</span> </a> 
-            
+              <a href="teacher_register.php" class="shortcut"> <i class="shortcut-icon icon-pencil"></i><span class="shortcut-label">Teacher Register</span> </a> 
+              <a href="view_teacher_list.php" class="shortcut"> <i class="shortcut-icon icon-list-ul"></i><span class="shortcut-label">Teacher Details</span> </a>
             
             </div>
-=======
-              <div class="shortcuts"> <a href="routine.php" class="shortcut"><i class="shortcut-icon icon-list-alt"></i><span
-                                        class="shortcut-label">Time table</span> </a><a href="routine.php" class="shortcut"><i
-                                            class="shortcut-icon icon-folder-close"></i><span class="shortcut-label">test</span> </a><a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-signal"></i> <span class="shortcut-label">Reports</span> </a><a href="javascript:;" class="shortcut"> <i class="shortcut-icon icon-comment"></i><span class="shortcut-label">Comments</span> </a><a href="class.php" class="shortcut"><i class="shortcut-icon icon-user"></i><span
-                                                class="shortcut-label">Student</span> </a><a href="view_marks.php" class="shortcut"><i
-                                                    class="shortcut-icon icon-file"></i><span class="shortcut-label">Marks</span> </a><a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-picture"></i> <span class="shortcut-label">Photos</span> </a><a href="javascript:;" class="shortcut"> <i class="shortcut-icon icon-tag"></i><span class="shortcut-label">Tags</span> </a> </div>
->>>>>>> 88a71026a58b5e56b884d8b07ed15e2ed87eaaed
               <!-- /shortcuts --> 
             </div>
             <!-- /widget-content --> 

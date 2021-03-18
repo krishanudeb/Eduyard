@@ -8,7 +8,7 @@ session_start();  //session started
   
  <head>
     <meta charset="utf-8">
-    <title>Signup - Bootstrap Admin Template</title>
+    <title>Admin Signup </title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes"> 
@@ -147,7 +147,7 @@ session_start();  //session started
 	<!--using html entities function to avoid page reload errors i.e, avoid redirect to same page-->
 		<form action="<?php echo htmlentities($_SERVER['PHP_SELF']);?>" method="POST">  /
 		
-			<h1>Signup for</h1>			
+			<h1>Admin Signup</h1>			
 			
 			<div class="login-fields">
 				
