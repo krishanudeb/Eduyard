@@ -12,7 +12,7 @@ $res=mysqli_query($con,$sql);
 if(mysqli_num_rows($res)>0)
 {
     $html="
-         <h2>MARKS</h2>
+         
 
     <table>
         <thead>

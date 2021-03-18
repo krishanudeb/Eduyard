@@ -2,17 +2,17 @@
 
 include 'dbcon.php';
 include 'functions.inc.php'; //contains imp functions
-<<<<<<< HEAD
-=======
+
+
 include 'top.inc.php'; // contasins top nav bar etc.
->>>>>>> b52b9839278af08cc6d95903ca5b1b179f1eea7e
+
 
 $msg='';
 
 
 
 
-<<<<<<< HEAD
+
 ?>
 
 
@@ -23,7 +23,7 @@ $msg='';
   
 <head>
     <meta charset="utf-8">
-    <title>Account - Bootstrap Admin Template</title>
+    <title>View Marks</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">    
@@ -142,7 +142,7 @@ $msg='';
 
     
  <link rel="stylesheet" href="css/custom.css">   
->>>>>>> b52b9839278af08cc6d95903ca5b1b179f1eea7e
+
 
 <div class="main">
   

@@ -2,6 +2,14 @@
 
 //contains important functions
 
+function prx($arr) { //prints array data
+
+	echo '<pre>';
+	print_r($arr);
+	die();
+	
+}
+
 function get_safe_value($con,$str)
 {
 	if($str!=''){

@@ -19,7 +19,7 @@ $sql2="select student.name as sname,student.roll_no, SUM(marks.marks) as m from 
 if(mysqli_num_rows($res2)>0)
 {
     $html="
-         <h2>MARKS</h2>
+         
 
     <table>
         <thead>

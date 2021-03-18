@@ -4,8 +4,13 @@
 }
 
 .container2{
+<<<<<<< HEAD
   width: 720px;
   height: 440px;
+=======
+  
+  display: flex;
+>>>>>>> 88a71026a58b5e56b884d8b07ed15e2ed87eaaed
   margin: 0 auto;
   padding-left: 32px;
   padding-right: 32px;
@@ -28,6 +33,7 @@ td, th {
   border: 2px dotted;
 }
 
+<<<<<<< HEAD
 /* Profile Card CSS*/
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -39,6 +45,40 @@ td, th {
 .title {
   color: grey;
   font-size: 18px;
+=======
+.container3 {
+  
+  display: flex;
+  margin: 0 auto;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-radius: 12px;
+  background-color: #F7DC6F;
+  font-family: Lato;
+}
+
+
+
+.container3 h2{
+  text-align: center;
+}
+
+
+.container4 {
+  
+  
+  display: flex;
+  margin: 0 auto;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-radius: 12px;
+  background-color: #82E0AA;
+  font-family: Lato;
+>>>>>>> 88a71026a58b5e56b884d8b07ed15e2ed87eaaed
 }
 
 button {
@@ -60,6 +100,9 @@ a {
   color: black;
 }
 
+<<<<<<< HEAD
 button:hover, a:hover {
   opacity: 0.7;
 }
+=======
+>>>>>>> 88a71026a58b5e56b884d8b07ed15e2ed87eaaed
