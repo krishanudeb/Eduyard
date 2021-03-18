@@ -28,7 +28,7 @@ if(isset($_POST['submit'])) { //on clicking register
   
  <head>
     <meta charset="utf-8">
-    <title>Student Signup </title>
+    <title>Signup - Eduyard Admin Template</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes"> 

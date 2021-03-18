@@ -8,7 +8,7 @@ session_start();  //session started
   
  <head>
     <meta charset="utf-8">
-    <title>Admin Signup </title>
+    <title>Signup - Bootstrap Admin Template</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes"> 
@@ -201,7 +201,7 @@ session_start();  //session started
 
 <!-- Text Under Box -->
 <div class="login-extra">
-	Already have an account? <a href="adminlogin.php">Login to your account</a>
+	Already have an account? <a href="login.php">Login to your account</a>
 </div> <!-- /login-extra -->
 
 

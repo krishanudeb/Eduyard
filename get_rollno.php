@@ -4,7 +4,7 @@ include 'dbcon.php';
 include 'functions.inc.php'; //contains imp functions
 
 $class_id=get_safe_value($con,$_POST['class_id']);
-//$student_id=get_safe_value($con,$_POST['student_id']);
+$student_id=get_safe_value($con,$_POST['student_id']);
 $res=mysqli_query($con,"select * from student where class_id='$class_id' ");
 
 if(mysqli_num_rows($res)>0)

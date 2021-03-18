@@ -1,3 +1,7 @@
+<?php
+//session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   
@@ -62,44 +66,134 @@
 	
 </div> <!-- /navbar -->
 
+<!--Php Code starts-->
+<?php
 
+include 'dbcon.php';
+include 'functions.inc.php'; 
+
+if (isset($_POST['submit']))       //Details insertion on database table
+	{
+		$name = mysqli_real_escape_string($con,$_POST['name']);
+		$phone = mysqli_real_escape_string($con,$_POST['phone']);
+		$address = mysqli_real_escape_string($con,$_POST['address']);
+		$username =mysqli_real_escape_string($con,$_POST['username']);
+		$password =mysqli_real_escape_string($con,$_POST['password']);
+		$cpassword = mysqli_real_escape_string($con,$_POST['cpassword']);
+
+			//Password Encryption Code using Blowfish Algorithm
+		$pass= password_hash($password,PASSWORD_BCRYPT);  
+		$cpass= password_hash($cpassword,PASSWORD_BCRYPT);
+
+		//user validation using phone toi avoid duplication
+
+		$phonequery= "select * from teacher where phone='$phone' " ;
+		$query= mysqli_query($con,$phonequery);
+
+		$phonecount= mysqli_num_rows($query);
+
+		$length = strlen($password); //if reqd in future
+
+		if($phonecount>0)
+			{
+				echo "Contact already exist";
+		    }
+		 else
+			 { 
+				if($length<=7) // Minimum Character for password validation
+
+					{   ?>
+
+						<script>
+							alert("Minimum 8 characters required");
+							</script>
+							<?php
+					}
+
+							else
+							{
+										//password validation
+											if($password===$cpassword)
+												{
+
+													//insertion query
+													$insertquery ="insert into teacher(name,phone,address,username, password, cpassword) values('$name','$phone','$address','$username','$pass','$cpass')";
+													$iquery= mysqli_query($con,$insertquery);
+
+													//insertion validation
+													if($iquery)
+													{
+														?>
+														<script>
+															alert("insertion successful");
+															</script>
+															<?php 
+													}
+
+														else
+														{
+															?>
+															<script>
+															alert("insertion unsuccessful");
+															</script>
+																
+															<?php 	
+														}
+
+												} 
+											else
+												{
+												echo "Password not matching";
+												}
+								
+							}
+			
+				}
+	}
+	?>
+					<!-- Php Code End-->
 
 <div class="account-container register">
 	
 	<div class="content clearfix">
 		
-		<form action="#" method="post">
+		<form action="<?php echo htmlentities($_SERVER['PHP_SELF']);?>" method="POST">
 		
-			<h1>Signup </h1>			
+			<h1>Teacher Signup </h1>			
 			
 			<div class="login-fields">
 				
-				<p>Create Teacher Account</p>
+			<p>Create Teacher account:</p>
 				
 				<div class="field">
-					<label for="firstname">First Name:</label>
-					<input type="text" id="firstname" name="firstname" value="" placeholder="First Name" class="login" />
-				</div> <!-- /field -->
-				
-				<div class="field">
-					<label for="lastname">Last Name:</label>	
-					<input type="text" id="lastname" name="lastname" value="" placeholder="Last Name" class="login" />
+					<label for="name">Name:</label>
+					<input type="text" id="name" name="name" value="" placeholder="Name" class="login" required />
 				</div> <!-- /field -->
 				
 				
 				<div class="field">
-					<label for="email">Email Address:</label>
-					<input type="text" id="email" name="email" value="" placeholder="Email" class="login"/>
+					<label for="phone">Phone Number:</label>	
+					<input type="text" id="phone" name="phone" value="" placeholder="Phone Number" class="login" required />
+				</div> <!-- /field -->
+				
+				<div class="field">
+					<label for="address">Address:</label>	
+					<input type="text" id="address" name="address" value="" placeholder="Enter Address" class="login" required />
+				</div> <!-- /field -->
+
+				<div class="field">
+					<label for="username">Username</label>
+					<input type="text" id="username" name="username" value="" placeholder="User Name" class="login" required />
 				</div> <!-- /field -->
 				
 				<div class="field">
 					<label for="password">Password:</label>
-					<input type="password" id="password" name="password" value="" placeholder="Password" class="login"/>
+					<input type="password" id="password" name="password" value="" placeholder="Password" class="login" required />
 				</div> <!-- /field -->
 				
 				<div class="field">
-					<label for="confirm_password">Confirm Password:</label>
-					<input type="password" id="confirm_password" name="confirm_password" value="" placeholder="Confirm Password" class="login"/>
+					<label for="cpassword">Confirm Password:</label>
+					<input type="password" id="cpassword" name="cpassword" value="" placeholder="Confirm Password" class="login" required />
 				</div> <!-- /field -->
 				
 			</div> <!-- /login-fields -->
@@ -107,11 +201,11 @@
 			<div class="login-actions">
 				
 				<span class="login-checkbox">
-					<input id="Field" name="Field" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4" />
+					<input id="Field" name="Field" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4" required />
 					<label class="choice" for="Field">Agree with the Terms & Conditions.</label>
 				</span>
 									
-				<button class="button btn btn-primary btn-large">Register</button>
+				<button type="submit" name="submit"class="button btn btn-primary btn-large">Register</button>
 				
 			</div> <!-- .actions -->
 			
@@ -124,7 +218,7 @@
 
 <!-- Text Under Box -->
 <div class="login-extra">
-	Already have an account? <a href="login.html">Login to your account</a>
+	Already have an account? <a href="teacher_login.php">Login to your account</a>
 </div> <!-- /login-extra -->
 
 

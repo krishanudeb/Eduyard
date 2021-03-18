@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 
 include 'dbcon.php';
 
@@ -20,6 +20,7 @@ include 'dbcon.php';
         rel="stylesheet">
 <link href="css/font-awesome.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
 <link href="css/pages/dashboard.css" rel="stylesheet">
 <script src ="jQuery/juqery_latest.js"></script>
 

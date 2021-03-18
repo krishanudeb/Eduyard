@@ -46,7 +46,11 @@ if(mysqli_num_rows($res2)>0)
 
                            while($row2=mysqli_fetch_assoc($res2))
                                             {   
+<<<<<<< HEAD
+
+=======
                                             
+>>>>>>> b52b9839278af08cc6d95903ca5b1b179f1eea7e
                                            $rank++;  
                                                        $html.= "<tr>";
                                                $html.="<td>".$row2['sname']."</td>";

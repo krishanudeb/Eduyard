@@ -1,6 +1,6 @@
 <?php
 
-//contains inportant functions
+//contains important functions
 
 function get_safe_value($con,$str)
 {

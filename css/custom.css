@@ -4,19 +4,16 @@
 }
 
 .container2{
-  
-  display: flex;
+  width: 720px;
+  height: 440px;
   margin: 0 auto;
   padding-left: 32px;
   padding-right: 32px;
   padding-top: 40px;
-  padding-bottom: 40px;
   border-radius: 12px;
   background-color: #90a4ae;
   font-family: Lato;
 }
-
-
 
 .container2 h2{
   text-align: center;
@@ -31,53 +28,38 @@ td, th {
   border: 2px dotted;
 }
 
-.container3 {
-  
-  display: flex;
-  margin: 0 auto;
-  padding-left: 32px;
-  padding-right: 32px;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  border-radius: 12px;
-  background-color: #F7DC6F;
-  font-family: Lato;
-}
-
-
-
-.container3 h2{
+/* Profile Card CSS*/
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
   text-align: center;
 }
 
-
-.container4 {
-  width: 720px;
-  
-  display: flex;
-  margin: 0 auto;
-  padding-left: 32px;
-  padding-right: 32px;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  border-radius: 12px;
-  background-color: #82E0AA;
-  font-family: Lato;
+.title {
+  color: grey;
+  font-size: 18px;
 }
 
-
-
-.container4 h2{
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
   text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
 }
 
-.flex-container4 { 
-  display: flex; 
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
 }
-.vertical { 
-	border-left: 6px solid rgb(109, 245, 177); 
-	height: 500px; 
-	position:absolute; 
-	top:15%;
-	left: 30%; 
-} 
+
+button:hover, a:hover {
+  opacity: 0.7;
+}

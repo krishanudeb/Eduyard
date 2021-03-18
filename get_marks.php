@@ -5,12 +5,11 @@ include 'functions.inc.php'; //contains imp functions
 
 $class_id=get_safe_value($con,$_POST['class_id']);
 
-
+$sql="select name from subject where class_id='$class_id' order by id desc";
 $sql2="select student.name as sname,student.roll_no,subject.name as subname,marks.marks from student,subject,marks where student.id = marks.student_id and student.class_id= '$class_id' and marks.sub_id=subject.id order by student.roll_no  ";
+$res=mysqli_query($con,$sql);
 
- $res2=mysqli_query($con,$sql2);
-
-if(mysqli_num_rows($res2)>0)
+if(mysqli_num_rows($res)>0)
 {
     $html="
          <h2>MARKS</h2>
@@ -34,7 +33,7 @@ if(mysqli_num_rows($res2)>0)
                                             
                                             
 
-                          
+                           $res2=mysqli_query($con,$sql2);
 
 
                            while($row2=mysqli_fetch_assoc($res2))
@@ -48,14 +47,7 @@ if(mysqli_num_rows($res2)>0)
                                                $html.= "</tr>";
 
                                             }
-
-
-          
-
-
-
-    
-    echo $html;
+                                              echo $html;
 }
 else
 {
